@@ -16,7 +16,7 @@ class Cell {
         rect(this.x, this.y, this.w, this.w);
     }
     livingNeighbours() {
-        neighbours = 0;
+        let neighbours = 0;
         //upLeft
         if (!(this.x === 0) || !(this.y === 0)) {
             if (grid[this.y / this.w - 1][this.x / this.w - 1].alive) {
@@ -30,7 +30,9 @@ class Cell {
             }
         }
         //upRight
-        if (!(this.x === 0) || !(this.y + this.w === height)) {
+        if (!(this.x + this.w === width) || !(this.y === 0)) {
+            console.log(grid[this.y / this.w][this.x / this.w]);
+            console.log((!(this.x + this.w === width) || !(this.y === 0)))
             if (grid[this.y / this.w - 1][this.x / this.w + 1].alive) {
                 neighbours++;
             }
@@ -65,6 +67,9 @@ class Cell {
                 neighbours++;
             }
         }
-        return neighbours;
+        this.neighbours = neighbours;
+    }
+    update() {
+        return this.alive ? (!(this.neighbours < 2 || this.neighbours > 3)) : (this.neighbours === 3)
     }
 }

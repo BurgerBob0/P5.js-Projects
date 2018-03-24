@@ -15,6 +15,7 @@ function setup() {
         grid.push(temp);
     }
     newgrid = grid;
+
 }
 
 //grid[y][x]
@@ -22,5 +23,12 @@ function setup() {
 function draw() {
     background(0);
     grid.forEach(array => array.forEach(cell => cell.show()));
-
+    arrayCopy(grid,newgrid);
+    for (let i = 0; i < grid.length; i++) {
+        for (let j = 0; j < grid[i].length; j++) {
+            grid[i][j].livingNeighbours();
+            newgrid[i][j].alive = grid[i][j].update();
+        }
+    }
+    arrayCopy(newgrid,grid);
 }
