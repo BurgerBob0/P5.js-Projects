@@ -4,6 +4,7 @@ class Cell {
         this.y = y * w;
         this.w = w;
         this.visited = false;
+        this.current = false;
         // if (this.y === 0) {
         //     this.north = true
         // } else {
@@ -33,6 +34,9 @@ class Cell {
         fill(0, 0, 0);
         if (this.visited) {
             fill(127);
+        }
+        if(this.current){
+            fill(0,0,255);
         }
         noStroke();
         rect(this.x, this.y, this.w, this.w);

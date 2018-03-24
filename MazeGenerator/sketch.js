@@ -1,4 +1,4 @@
-let w = 40;
+let w = 20;
 let col, row;
 let grid = [];
 let current;
@@ -33,27 +33,31 @@ function draw() {
         stack.push(current);
         xoffset = current.x / current.w - next.x / current.w;
         yoffset = current.y / current.w - next.y / current.w;
-        if(yoffset === 1){
+        if (yoffset === 1) {
             //up
             current.north = false;
             next.south = false;
-        }else if (xoffset === -1) {
+        } else if (xoffset === -1) {
             //right
             current.east = false;
             next.west = false;
-        }else if (yoffset === -1) {
+        } else if (yoffset === -1) {
             //down
             current.south = false;
             next.north = false;
-        }else if (xoffset === 1) {
+        } else if (xoffset === 1) {
             //left
             current.west = false;
             next.east = false;
         }
+        current.current = false;
         current = next;
-        current.visited = true
-    }else{
+        current.visited = true;
+        current.current = true;
+    } else {
+        current.current = false;
         current = stack[stack.length - 1]
-        stack.splice(-1,1);
+        current.current = true;
+        stack.splice(-1, 1);
     }
 }
