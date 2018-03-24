@@ -7,16 +7,22 @@ function setup() {
     row = width / w;
     col = height / w;
     for (let i = 0; i < col; i++) {
+        let temp = []
         for (let j = 0; j < row; j++) {
-            cells.push(new Cell(i, j, w))
+            temp.push(new Cell(j, i, w))
         }
+        cells.push(temp);
     }
-    cells[0].visited = true;
+    cells[0][0].visited = true;
 }
+
+//cell[y][x]
 
 function draw() {
     background(0);
-    for (cell of cells) {
-        cell.show();
+    for (rows of cells) {
+        for (cell of rows) {
+            cell.show();
+        }
     }
 }
