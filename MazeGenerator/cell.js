@@ -3,6 +3,7 @@ class Cell {
         this.x = x * w;
         this.y = y * w;
         this.w = w;
+        this.visited = false;
         if (this.y === 0) {
             this.north = true
         } else {

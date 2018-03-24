@@ -11,6 +11,7 @@ function setup() {
             cells.push(new Cell(i, j, w))
         }
     }
+    cells[0].visited = true;
 }
 
 function draw() {
