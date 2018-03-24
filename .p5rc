@@ -1,6 +1,7 @@
 {
   "name": "P5.js",
   "projects": [
-    "MazeGenerator"
+    "MazeGenerator",
+    "The Game Of Life"
   ]
 }
