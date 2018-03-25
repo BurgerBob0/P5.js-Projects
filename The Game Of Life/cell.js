@@ -33,6 +33,8 @@ class Cell {
         if (!(this.x + this.w === width) || !(this.y === 0)) {
             console.log(grid[this.y / this.w][this.x / this.w]);
             console.log((!(this.x + this.w === width) || !(this.y === 0)))
+            console.log(this.y / this.w - 1);
+            console.log(this.x / this.w + 1].alive)
             if (grid[this.y / this.w - 1][this.x / this.w + 1].alive) {
                 neighbours++;
             }
