@@ -18,7 +18,7 @@ class Cell {
     livingNeighbours() {
         let neighbours = 0;
         //upLeft
-        if (!(this.x === 0) || !(this.y === 0)) {
+        if (!(this.x === 0 || this.y === 0)) {
             if (grid[this.y / this.w - 1][this.x / this.w - 1].alive) {
                 neighbours++;
             }
@@ -30,11 +30,7 @@ class Cell {
             }
         }
         //upRight
-        if (!(this.x + this.w === width) || !(this.y === 0)) {
-            console.log(grid[this.y / this.w][this.x / this.w]);
-            console.log((!(this.x + this.w === width) || !(this.y === 0)))
-            console.log(this.y / this.w - 1);
-            console.log(this.x / this.w + 1].alive)
+        if (!(this.x + this.w === width || this.y === 0)) {
             if (grid[this.y / this.w - 1][this.x / this.w + 1].alive) {
                 neighbours++;
             }
@@ -52,7 +48,7 @@ class Cell {
             }
         }
         //downLeft
-        if (!(this.x === 0) || !(this.y + this.w === height)) {
+        if (!(this.x === 0 || this.y + this.w === height)) {
             if (grid[this.y / this.w + 1][this.x / this.w - 1].alive) {
                 neighbours++;
             }
@@ -64,8 +60,8 @@ class Cell {
             }
         }
         //downRight
-        if (!(this.x + this.w === width) || !(this.y + this.w === height)) {
-            if (grid[this.y / this.w - 1][this.x / this.w - 1].alive) {
+        if (!(this.x + this.w === width || this.y + this.w === height)) {
+            if (grid[this.y / this.w + 1][this.x / this.w + 1].alive) {
                 neighbours++;
             }
         }
