@@ -2,6 +2,7 @@
   "name": "P5.js",
   "projects": [
     "MazeGenerator",
-    "The Game Of Life"
+    "The Game Of Life",
+    "Minesweeper"
   ]
 }
