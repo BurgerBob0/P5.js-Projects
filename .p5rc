@@ -3,6 +3,7 @@
   "projects": [
     "MazeGenerator",
     "The Game Of Life",
-    "Minesweeper"
+    "Minesweeper",
+    "10 print"
   ]
 }

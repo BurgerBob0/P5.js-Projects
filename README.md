@@ -9,3 +9,6 @@ Convay's Game of in Javascript
 
 ## [Minesweeper](https://burgerbob00.github.io/P5.js-Projects/Minesweeper/)
 Simple Minesweeper
+
+## [10 Print](https://burgerbob00.github.io/P5.js-Projects/10%20print/)
+Simple 10 Print
